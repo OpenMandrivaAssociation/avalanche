@@ -3,12 +3,13 @@
 
 Name:		avalanche
 Version:	0.4
-Release:	1
+Release:	2
 Summary:	Dynamic defect detection tool
-License:	GPLv2
+License:	Apache and GPLv2 and MIT
 Group:		Development/Other
 URL:		http://code.google.com/p/avalanche/
 Source0:	http://avalanche.googlecode.com/files/avalanche-0.4.tar.gz
+Source1:	http://avalanche.googlecode.com/files/avalanche.pdf
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires:	bison
@@ -69,8 +70,12 @@ export PATH=%{_libexecdir}/%{name}/bin:\$PATH
 EOF
 chmod +x %{buildroot}%{_bindir}/%{name}
 
+mkdir -p %{buildroot}%{_docdir}/%{name}
+install -m644 README %{SOURCE1} %{buildroot}%{_docdir}/%{name}
+
 #-----------------------------------------------------------------------
 %files
 %defattr(-,root,root,-)
 %{_libexecdir}/%{name}
 %{_bindir}/*
+%doc %{_docdir}/%{name}
