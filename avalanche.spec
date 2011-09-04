@@ -11,6 +11,8 @@ Group:		Development/Other
 Source0:	http://avalanche.googlecode.com/files/avalanche-0.4.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	bison
+BuildRequires:	flex
 BuildRequires:	gdb
 BuildRequires:	glibc-static-devel
 BuildRequires:	libgomp-devel
