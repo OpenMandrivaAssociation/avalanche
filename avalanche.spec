@@ -7,7 +7,7 @@ Release:	1
 Summary:	Dynamic defect detection tool
 License:	GPLv2
 Group:		Development/Other
-
+URL:		http://code.google.com/p/avalanche/
 Source0:	http://avalanche.googlecode.com/files/avalanche-0.4.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
