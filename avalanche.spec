@@ -17,6 +17,7 @@ BuildRequires:	flex
 BuildRequires:	gdb
 BuildRequires:	glibc-static-devel
 BuildRequires:	libgomp-devel
+BuildRequires:	libstdc++-static-devel
 BuildRequires:	openmpi-devel
 
 Patch0:		avalanche-0.6-pic.patch
