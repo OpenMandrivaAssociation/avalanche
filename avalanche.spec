@@ -2,13 +2,13 @@
 %define		_disable_ld_no_undefined	1
 
 Name:		avalanche
-Version:	0.4
-Release:	2
+Version:	0.6.0
+Release:	1
 Summary:	Dynamic defect detection tool
 License:	Apache and GPLv2 and MIT
 Group:		Development/Other
 URL:		http://code.google.com/p/avalanche/
-Source0:	http://avalanche.googlecode.com/files/avalanche-0.4.tar.gz
+Source0:	http://avalanche.googlecode.com/files/avalanche-0.6.tar.gz
 Source1:	http://avalanche.googlecode.com/files/avalanche.pdf
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
@@ -19,8 +19,9 @@ BuildRequires:	glibc-static-devel
 BuildRequires:	libgomp-devel
 BuildRequires:	openmpi-devel
 
-# mostly valgrind patches
-Patch0:		avalanche-0.4.patch
+Patch0:		avalanche-0.6-pic.patch
+# http://www.google.com/url?sa=D&q=http://code.google.com/p/avalanche/downloads/detail%3Fname%3DSTP_PL_patch&usg=AFQjCNEVUq9C1_2Azei4LlVN1372RpOCbQ
+Patch1:		avalanche-0.6-byacc.patch
 
 %description
 Avalanche is a dynamic defect detection tool that generates
@@ -41,6 +42,7 @@ Avalanche overview
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p0
 
 #-----------------------------------------------------------------------
 %build
