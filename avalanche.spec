@@ -3,7 +3,7 @@
 
 Name:		avalanche
 Version:	0.6.0
-Release:	1
+Release:	2
 Summary:	Dynamic defect detection tool
 License:	Apache and GPLv2 and MIT
 Group:		Development/Other
@@ -23,6 +23,8 @@ BuildRequires:	openmpi-devel
 Patch0:		avalanche-0.6-pic.patch
 # http://www.google.com/url?sa=D&q=http://code.google.com/p/avalanche/downloads/detail%3Fname%3DSTP_PL_patch&usg=AFQjCNEVUq9C1_2Azei4LlVN1372RpOCbQ
 Patch1:		avalanche-0.6-byacc.patch
+Patch2:		avalanche-0.6-glibc.patch
+Patch3:		avalanche-0.6-gcc47.patch
 
 %description
 Avalanche is a dynamic defect detection tool that generates
@@ -44,6 +46,8 @@ Avalanche overview
 %setup -q
 %patch0 -p1
 %patch1 -p0
+%patch2 -p1
+%patch3 -p1
 
 #-----------------------------------------------------------------------
 %build
