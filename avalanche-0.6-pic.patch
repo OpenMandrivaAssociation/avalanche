@@ -1,0 +1,10 @@
+--- avalanche-0.6.0/valgrind/coregrind/m_syswrap/syswrap-linux.c.orig	2011-12-19 14:13:37.347123515 -0200
++++ avalanche-0.6.0/valgrind/coregrind/m_syswrap/syswrap-linux.c	2011-12-19 14:13:51.513123386 -0200
+@@ -216,7 +216,6 @@ static void run_a_thread_NORETURN ( Word
+          "int	$0x80\n"	/* exit(tst->os_state.exitcode) */
+          : "=m" (tst->status)
+          : "n" (VgTs_Empty), "n" (__NR_exit), "m" (tst->os_state.exitcode)
+-         : "eax", "ebx"
+       );
+ #elif defined(VGP_amd64_linux)
+       asm volatile (

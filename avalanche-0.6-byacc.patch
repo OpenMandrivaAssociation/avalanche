@@ -1,0 +1,138 @@
+Index: stp-ver-0.1-11-18-2008/parser/PL.y
+===================================================================
+--- stp-ver-0.1-11-18-2008/parser/PL.y	(revision 250)
++++ stp-ver-0.1-11-18-2008/parser/PL.y	(working copy)
+@@ -53,75 +53,75 @@
+ 
+ %start cmd
+ 
+-%token	AND_TOK			"AND"
+-%token	OR_TOK			"OR"
+-%token	NOT_TOK			"NOT"
+-%token	XOR_TOK			"XOR"
+-%token	NAND_TOK		"NAND"
+-%token	NOR_TOK			"NOR"
+-%token	IMPLIES_TOK		"=>"
+-%token	IFF_TOK			"<=>"
++%token	AND_TOK			
++%token	OR_TOK			
++%token	NOT_TOK			
++%token	XOR_TOK			
++%token	NAND_TOK		
++%token	NOR_TOK			
++%token	IMPLIES_TOK		
++%token	IFF_TOK			
+ 
+-%token	IF_TOK			"IF"
+-%token	THEN_TOK		"THEN"
+-%token	ELSE_TOK		"ELSE"
+-%token	ELSIF_TOK		"ELSIF"
+-%token	END_TOK			"END"
+-%token	ENDIF_TOK		"ENDIF"
+-%token	NEQ_TOK			"/="
+-%token  ASSIGN_TOK              ":="
++%token	IF_TOK			
++%token	THEN_TOK		
++%token	ELSE_TOK		
++%token	ELSIF_TOK		
++%token	END_TOK			
++%token	ENDIF_TOK		
++%token	NEQ_TOK			
++%token  ASSIGN_TOK              
+ 
+-%token  BV_TOK                  "BV"
+-%token  BVLEFTSHIFT_TOK         "<<"
+-%token  BVRIGHTSHIFT_TOK        ">>"
+-%token  BVPLUS_TOK              "BVPLUS"
+-%token  BVSUB_TOK               "BVSUB"
+-%token  BVUMINUS_TOK            "BVUMINUS"
+-%token  BVMULT_TOK              "BVMULT"
++%token  BV_TOK                  
++%token  BVLEFTSHIFT_TOK         
++%token  BVRIGHTSHIFT_TOK        
++%token  BVPLUS_TOK              
++%token  BVSUB_TOK               
++%token  BVUMINUS_TOK            
++%token  BVMULT_TOK              
+ 
+-%token  BVDIV_TOK               "BVDIV"
+-%token  BVMOD_TOK               "BVMOD"
+-%token  SBVDIV_TOK              "SBVDIV"
+-%token  SBVREM_TOK              "SBVREM"
++%token  BVDIV_TOK               
++%token  BVMOD_TOK               
++%token  SBVDIV_TOK              
++%token  SBVREM_TOK              
+ 
+ 
+-%token  BVNEG_TOK               "~"
+-%token  BVAND_TOK               "&"
+-%token  BVOR_TOK                "|"
+-%token  BVXOR_TOK               "BVXOR"
+-%token  BVNAND_TOK              "BVNAND"
+-%token  BVNOR_TOK               "BVNOR"
+-%token  BVXNOR_TOK              "BVXNOR"
+-%token  BVCONCAT_TOK            "@"
++%token  BVNEG_TOK               
++%token  BVAND_TOK               
++%token  BVOR_TOK                
++%token  BVXOR_TOK               
++%token  BVNAND_TOK              
++%token  BVNOR_TOK               
++%token  BVXNOR_TOK              
++%token  BVCONCAT_TOK            
+ 
+-%token  BVLT_TOK                "BVLT"
+-%token  BVGT_TOK                "BVGT"
+-%token  BVLE_TOK                "BVLE"
+-%token  BVGE_TOK                "BVGE"
++%token  BVLT_TOK                
++%token  BVGT_TOK                
++%token  BVLE_TOK                
++%token  BVGE_TOK                
+ 
+-%token  BVSLT_TOK               "BVSLT"
+-%token  BVSGT_TOK               "BVSGT"
+-%token  BVSLE_TOK               "BVSLE"
+-%token  BVSGE_TOK               "BVSGE"
+-%token  BOOL_TO_BV_TOK          "BOOLBV"
+-%token  BVSX_TOK                "BVSX"
+-%token  BOOLEXTRACT_TOK         "BOOLEXTRACT"
+-%token  ASSERT_TOK              "ASSERT"
+-%token  QUERY_TOK               "QUERY"
++%token  BVSLT_TOK               
++%token  BVSGT_TOK               
++%token  BVSLE_TOK               
++%token  BVSGE_TOK               
++%token  BOOL_TO_BV_TOK          
++%token  BVSX_TOK                
++%token  BOOLEXTRACT_TOK         
++%token  ASSERT_TOK              
++%token  QUERY_TOK               
+ 
+-%token  BOOLEAN_TOK             "BOOLEAN"
+-%token  ARRAY_TOK               "ARRAY"
+-%token  OF_TOK                  "OF"
+-%token  WITH_TOK                "WITH"
++%token  BOOLEAN_TOK             
++%token  ARRAY_TOK               
++%token  OF_TOK                  
++%token  WITH_TOK                
+ 
+-%token  TRUELIT_TOK             "TRUE"
+-%token  FALSELIT_TOK            "FALSE"
++%token  TRUELIT_TOK             
++%token  FALSELIT_TOK            
+ 
+-%token  IN_TOK                  "IN"
+-%token  LET_TOK                 "LET"
++%token  IN_TOK                  
++%token  LET_TOK                 
+ //%token  COUNTEREXAMPLE_TOK      "COUNTEREXAMPLE"
+-%token  PUSH_TOK                "PUSH"
+-%token  POP_TOK                 "POP"
++%token  PUSH_TOK                
++%token  POP_TOK                 
+ 
+ %left IN_TOK
+ %left XOR_TOK

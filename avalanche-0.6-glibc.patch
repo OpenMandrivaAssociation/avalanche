@@ -1,0 +1,53 @@
+--- avalanche-0.6.0/valgrind/configure.in.orig	2012-09-11 13:00:51.936714853 -0300
++++ avalanche-0.6.0/valgrind/configure.in	2012-09-11 13:02:03.750718601 -0300
+@@ -754,6 +754,13 @@ case "${GLIBC_VERSION}" in
+ 	DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
+ 	DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
+ 	;;
++     2.15)
++	AC_MSG_RESULT(2.15 family)
++	AC_DEFINE([GLIBC_2_15], 1, [Define to 1 if you're using glibc 2.15.x])
++	DEFAULT_SUPP="glibc-2.X.supp ${DEFAULT_SUPP}"
++	DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
++	DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
++	;;
+      darwin)
+ 	AC_MSG_RESULT(Darwin)
+ 	AC_DEFINE([DARWIN_LIBC], 1, [Define to 1 if you're using Darwin])
+@@ -767,7 +774,7 @@ case "${GLIBC_VERSION}" in
+ 
+      *)
+ 	AC_MSG_RESULT([unsupported version ${GLIBC_VERSION}])
+-	AC_MSG_ERROR([Valgrind requires glibc version 2.2 - 2.14])
++	AC_MSG_ERROR([Valgrind requires glibc version 2.2 - 2.15])
+ 	AC_MSG_ERROR([or Darwin libc])
+ 	;;
+ esac
+--- avalanche-0.6.0/valgrind/configure.orig	2012-09-11 13:00:49.480716366 -0300
++++ avalanche-0.6.0/valgrind/configure	2012-09-11 13:01:39.471718574 -0300
+@@ -6292,6 +6292,16 @@ $as_echo "#define GLIBC_2_14 1" >>confde
+ 	DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
+ 	DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
+ 	;;
++     2.15)
++	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: 2.15 family" >&5
++$as_echo "2.15 family" >&6; }
++
++$as_echo "#define GLIBC_2_15 1" >>confdefs.h
++
++	DEFAULT_SUPP="glibc-2.X.supp ${DEFAULT_SUPP}"
++	DEFAULT_SUPP="glibc-2.34567-NPTL-helgrind.supp ${DEFAULT_SUPP}"
++	DEFAULT_SUPP="glibc-2.X-drd.supp ${DEFAULT_SUPP}"
++	;;
+      darwin)
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: Darwin" >&5
+ $as_echo "Darwin" >&6; }
+@@ -6312,7 +6322,7 @@ $as_echo "#define BIONIC_LIBC 1" >>confd
+      *)
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: unsupported version ${GLIBC_VERSION}" >&5
+ $as_echo "unsupported version ${GLIBC_VERSION}" >&6; }
+-	as_fn_error "Valgrind requires glibc version 2.2 - 2.14" "$LINENO" 5
++	as_fn_error "Valgrind requires glibc version 2.2 - 2.15" "$LINENO" 5
+ 	as_fn_error "or Darwin libc" "$LINENO" 5
+ 	;;
+ esac

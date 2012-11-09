@@ -1,0 +1,71 @@
+--- avalanche-0.6.0/stp-ver-0.1-11-18-2008/sat/mtl/Map.h.orig	2012-09-11 13:34:37.754779154 -0300
++++ avalanche-0.6.0/stp-ver-0.1-11-18-2008/sat/mtl/Map.h	2012-09-11 13:34:46.809780493 -0300
+@@ -87,7 +87,7 @@ class Map {
+     public:
+ 
+      Map () : table(NULL), cap(0), size(0) {}
+-     Map (const H& h, const E& e) : Map(), hash(h), equals(e) {}
++     Map (const H& h, const E& e) : table(NULL), cap(0), size(0), hash(h), equals(e) {}
+     ~Map () { delete [] table; }
+ 
+     void insert (const K& k, const D& d) { if (size+1 > cap / 2) rehash(); _insert(k, d); size++; }
+--- avalanche-0.6.0/stp-ver-0.1-11-18-2008/parser/PL.lex.orig	2012-09-11 13:42:10.367795539 -0300
++++ avalanche-0.6.0/stp-ver-0.1-11-18-2008/parser/PL.lex	2012-09-11 13:42:19.158795673 -0300
+@@ -7,6 +7,7 @@
+  * LICENSE: Please view LICENSE file in the home dir of this Program
+  ********************************************************************/
+ #include <iostream>
++#include <unistd.h>
+ #include "../AST/AST.h"
+ #include "parsePL_defs.h"
+ 
+--- avalanche-0.6.0/driver/src/Entry.cpp.orig	2012-09-11 13:43:45.726798742 -0300
++++ avalanche-0.6.0/driver/src/Entry.cpp	2012-09-11 13:43:48.606798331 -0300
+@@ -39,6 +39,7 @@
+ #include <string.h>
+ #include <cerrno>
+ #include <fstream>
++#include <unistd.h>
+ 
+ #include "ExecutionManager.h"
+ #include "Logger.h"
+--- avalanche-0.6.0/driver/src/ExecutionManager.cpp.orig	2012-09-11 13:44:30.694799726 -0300
++++ avalanche-0.6.0/driver/src/ExecutionManager.cpp	2012-09-11 13:44:38.909800386 -0300
+@@ -36,6 +36,7 @@
+ #include <set>
+ #include <cstring>
+ #include <stack>
++#include <unistd.h>
+ 
+ #include "av_config.h" //for TMPDIR
+ 
+--- avalanche-0.6.0/driver/src/Logger.cpp.orig	2012-09-11 13:45:12.078801500 -0300
++++ avalanche-0.6.0/driver/src/Logger.cpp	2012-09-11 13:45:19.837801953 -0300
+@@ -23,6 +23,7 @@
+ 
+ #include <string>
+ #include <iostream>
++#include <unistd.h>
+ 
+ #include "Logger.h"
+ #include "stdio.h"
+--- avalanche-0.6.0/driver/src/FileBuffer.cpp.orig	2012-09-11 13:45:53.566802611 -0300
++++ avalanche-0.6.0/driver/src/FileBuffer.cpp	2012-09-11 13:46:01.749802715 -0300
+@@ -30,6 +30,7 @@
+ #include <fcntl.h>
+ #include <iostream>
+ #include <cerrno>
++#include <unistd.h>
+ 
+ #include "FileBuffer.h"
+ #include "Logger.h"
+--- avalanche-0.6.0/driver/src/Input.cpp.orig	2012-09-11 13:46:31.837803174 -0300
++++ avalanche-0.6.0/driver/src/Input.cpp	2012-09-11 13:46:33.822803893 -0300
+@@ -26,6 +26,7 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include <cerrno>
++#include <unistd.h>
+ 
+ #include "Input.h"
+ #include "FileBuffer.h"
