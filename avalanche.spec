@@ -12,6 +12,11 @@ Source0:	http://avalanche.googlecode.com/files/avalanche-0.6.tar.gz
 Source1:	http://avalanche.googlecode.com/files/avalanche.pdf
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gdb
